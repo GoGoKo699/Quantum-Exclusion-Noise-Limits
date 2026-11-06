@@ -1,30 +1,16 @@
-# Proof obligations and claim boundaries
+# Scientific claim map
 
-**Status: research integration, not release-ready.** The exploration proposed two headline claims. They must not be presented as certified theorems until the following quantifiers and arguments are checked.
+The initial provisional checklist is superseded by the topic-based proofs below. These links retain the old entrypoint without maintaining a competing scientific account.
 
-## A. Exact adversarial threshold
+| Claim or boundary | Current authoritative argument |
+|---|---|
+| Adversary class and priors | [Operational model](model.md) |
+| Local threshold construction, including coherent error locations | [Adversarial proof](adversarial.md#local-construction) |
+| Unrestricted collective-measurement necessity | [Symmetric compression and coefficient obstruction](adversarial.md#symmetric-compression-of-any-putative-solution) |
+| Uniform-in-copy-number noisy converse | [Coefficient norm and quantitative leakage](noise.md) |
+| Fixed-copy noise power and lower/upper asymptotic rates | [Uniform error bounds](noise.md#uniform-error-bounds) |
+| Asymmetric triples and orthogonal-pair boundary | [Model](model.md) and [boundary control](interpretation.md#an-orthogonal-pair-boundary) |
+| Attribution and matched prior comparison | [Related work](../references/RELATED_WORK.md) |
+| Finite computational checks and their scope | [Verification](../verification/README.md) |
 
-Candidate statement: for a strict triple of pure qubit states, perfect exclusion after up to (t) unknown-location corruptions is possible precisely when (n\ge 3t+1).
-
-1. State the adversary class precisely. Distinguish product replacement from arbitrary correlated replacement, and whether the adversary knows the preparation label.
-2. For sufficiency, construct a *single* POVM independent of corruption positions. The suggested route uses the single-copy three-outcome exclusion POVM and a deterministic count decoder: with at least (n-t) honest reports, the true label can occur at most (t) times, so a label occurring more than (t) times can be safely excluded only after carefully checking the output convention. Derive the correct decoder without conflating identification and exclusion.
-3. For necessity, prove that no global POVM works for (n\le3t). This must include coherent entangled measurements and not merely product decoders. Establish the requisite support-spanning or positive-definite operator witness for every strict triple.
-4. Check (t=0), (n=3t), asymmetric triples, degenerate Bloch triangles, and orthogonal-pair endpoints.
-
-## B. Independent noise exponent
-
-Candidate asymptotic: (E(\delta)=\tfrac13\log(1/\delta)+O(1)) as (\delta\downarrow0).
-
-1. Prove existence of the asymptotic exponent, or state liminf/limsup separately.
-2. Give an explicit local protocol and bound its error using a valid classical large-deviation argument, with the actual confusion matrix of the strict triple.
-3. Prove a uniform converse for arbitrary collective POVMs. A fixed-(n) Taylor coefficient alone does not imply an asymptotic exponent.
-4. Verify constants in (O(1)) are uniform in the required asymptotic order and state dependence on ensemble geometry and priors.
-5. Compare the sharp result with existing quantum state exclusion exponents and their regularized bounds under exactly matched hypotheses.
-
-## C. Numerical verification
-
-For representative strict and asymmetric triples, solve the finite-copy exclusion SDP at small (n), compare with the local protocol, and test noisy logarithmic slopes. The finite SDP does not prove a uniform asymptotic law.
-
-## D. Novelty and significance
-
-Attribute single-copy antidistinguishability, standard quantum exclusion error bounds, and classical large-deviation tools. Explain why the full-measurement converse is not already supplied by a prior regularized formula. Assess the actual restricted-repetition consequence under PRX Quantum's exceptional-advance/connection/insight criteria. No journal-readiness claim follows merely from a correct threshold.
+A fixed-nonzero-noise limit for the unrestricted exponent remains unproved here. The stated low-noise theorem uses liminf and limsup and does not depend on that limit. The educational-anchor choice, learning route, and final hosted-rendering review remain separate unfinished presentation tasks.

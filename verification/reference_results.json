@@ -1,0 +1,385 @@
+{
+  "versions": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "sympy": "1.14.0"
+  },
+  "algebra": [
+    {
+      "n": 1,
+      "balanced_exponents": [
+        1,
+        0,
+        0
+      ],
+      "identity_coefficient": "2/3",
+      "witness_operator_norm": 1.005188145691546,
+      "relative_high_block_residual": 0.0,
+      "K_geometry": 6.497440495842406,
+      "B_geometry": 110.16319083835886
+    },
+    {
+      "n": 2,
+      "balanced_exponents": [
+        1,
+        1,
+        0
+      ],
+      "identity_coefficient": "20/21",
+      "witness_operator_norm": 1.81646788680925,
+      "relative_high_block_residual": 6.111988175994342e-17,
+      "K_geometry": 6.497440495842406,
+      "B_geometry": 110.16319083835886
+    },
+    {
+      "n": 3,
+      "balanced_exponents": [
+        1,
+        1,
+        1
+      ],
+      "identity_coefficient": "260/147",
+      "witness_operator_norm": 4.0417995319209545,
+      "relative_high_block_residual": 1.3346746837745274e-16,
+      "K_geometry": 6.497440495842406,
+      "B_geometry": 110.16319083835886
+    },
+    {
+      "n": 4,
+      "balanced_exponents": [
+        2,
+        1,
+        1
+      ],
+      "identity_coefficient": "1040/441",
+      "witness_operator_norm": 7.637988988537081,
+      "relative_high_block_residual": 1.008125986463611e-16,
+      "K_geometry": 6.497440495842406,
+      "B_geometry": 110.16319083835886
+    },
+    {
+      "n": 5,
+      "balanced_exponents": [
+        2,
+        2,
+        1
+      ],
+      "identity_coefficient": "13000/3087",
+      "witness_operator_norm": 15.327108381501228,
+      "relative_high_block_residual": 1.6111564103418828e-16,
+      "K_geometry": 6.497440495842406,
+      "B_geometry": 110.16319083835886
+    },
+    {
+      "n": 6,
+      "balanced_exponents": [
+        2,
+        2,
+        2
+      ],
+      "identity_coefficient": "169000/21609",
+      "witness_operator_norm": 36.36243958428483,
+      "relative_high_block_residual": 2.8148619451705714e-16,
+      "K_geometry": 6.497440495842406,
+      "B_geometry": 110.16319083835886
+    },
+    {
+      "n": 7,
+      "balanced_exponents": [
+        3,
+        2,
+        2
+      ],
+      "identity_coefficient": "338000/27783",
+      "witness_operator_norm": 79.29512429288323,
+      "relative_high_block_residual": 3.9220283550168726e-16,
+      "K_geometry": 6.497440495842406,
+      "B_geometry": 110.16319083835886
+    }
+  ],
+  "adversarial": [
+    {
+      "ensemble": "trine",
+      "n": 1,
+      "t": 0,
+      "low_subspace_leakage": 6.206027343382955e-17,
+      "completeness_residual": 7.850462293418876e-17
+    },
+    {
+      "ensemble": "trine",
+      "n": 2,
+      "t": 0,
+      "low_subspace_leakage": 1.3815514036844267e-17,
+      "completeness_residual": 1.5011122659325205e-16
+    },
+    {
+      "ensemble": "trine",
+      "n": 3,
+      "t": 0,
+      "low_subspace_leakage": 2.1809566572459848e-17,
+      "completeness_residual": 5.383794727051534e-16
+    },
+    {
+      "ensemble": "trine",
+      "n": 4,
+      "t": 1,
+      "low_subspace_leakage": 1.5837388189751795e-16,
+      "completeness_residual": 1.4107235378070847e-15
+    },
+    {
+      "ensemble": "trine",
+      "n": 5,
+      "t": 1,
+      "low_subspace_leakage": 9.149435817936351e-17,
+      "completeness_residual": 3.003826854351483e-15
+    },
+    {
+      "ensemble": "asymmetric",
+      "n": 1,
+      "t": 0,
+      "low_subspace_leakage": 7.433509753550754e-17,
+      "completeness_residual": 7.850462293418876e-17
+    },
+    {
+      "ensemble": "asymmetric",
+      "n": 2,
+      "t": 0,
+      "low_subspace_leakage": 7.472654973438555e-18,
+      "completeness_residual": 3.483297094656094e-16
+    },
+    {
+      "ensemble": "asymmetric",
+      "n": 3,
+      "t": 0,
+      "low_subspace_leakage": 3.0168053994151857e-17,
+      "completeness_residual": 5.28085841456928e-16
+    },
+    {
+      "ensemble": "asymmetric",
+      "n": 4,
+      "t": 1,
+      "low_subspace_leakage": 1.2452702564585659e-16,
+      "completeness_residual": 8.940152033773567e-16
+    },
+    {
+      "ensemble": "asymmetric",
+      "n": 5,
+      "t": 1,
+      "low_subspace_leakage": 8.133925955673157e-17,
+      "completeness_residual": 2.3764294993340806e-15
+    }
+  ],
+  "noisy_sdp": [
+    {
+      "ensemble": "trine",
+      "n": 1,
+      "delta": 0.1,
+      "local_risk": 0.06666666666666667,
+      "lower": 0.06666666166666967,
+      "upper": 0.0666666716666636,
+      "gap": 9.99999393014317e-09,
+      "completeness_residual": 4.577566798522237e-16,
+      "min_primal_eigenvalue": 6.249996111255275e-09,
+      "min_dual_slack_eigenvalue": 2.4999984860052393e-09,
+      "newton_steps": 90
+    },
+    {
+      "ensemble": "trine",
+      "n": 1,
+      "delta": 0.01,
+      "local_risk": 0.006666666666666675,
+      "lower": 0.0066666616666696855,
+      "upper": 0.0066666716666635905,
+      "gap": 9.999993904989679e-09,
+      "completeness_residual": 5.495323605393213e-16,
+      "min_primal_eigenvalue": 5.102037655933423e-09,
+      "min_dual_slack_eigenvalue": 2.4999984886073245e-09,
+      "newton_steps": 89
+    },
+    {
+      "ensemble": "trine",
+      "n": 2,
+      "delta": 0.1,
+      "local_risk": 0.06666666666666667,
+      "lower": 0.05999999250000073,
+      "upper": 0.060000002500000156,
+      "gap": 9.999999425747141e-09,
+      "completeness_residual": 1.7473341812135092e-15,
+      "min_primal_eigenvalue": 3.0487803125881115e-09,
+      "min_dual_slack_eigenvalue": 9.75609762826895e-10,
+      "newton_steps": 90
+    },
+    {
+      "ensemble": "trine",
+      "n": 2,
+      "delta": 0.01,
+      "local_risk": 0.006666666666666658,
+      "lower": 0.00659999250000039,
+      "upper": 0.006600002499999891,
+      "gap": 9.999999501207613e-09,
+      "completeness_residual": 1.6236818291936322e-15,
+      "min_primal_eigenvalue": 2.5504997488989822e-09,
+      "min_dual_slack_eigenvalue": 1.2247499975719806e-09,
+      "newton_steps": 90
+    },
+    {
+      "ensemble": "trine",
+      "n": 3,
+      "delta": 0.1,
+      "local_risk": 0.04177777777777779,
+      "lower": 0.01814210446070088,
+      "upper": 0.01814211446063104,
+      "gap": 9.999930161708193e-09,
+      "completeness_residual": 5.741114837795643e-15,
+      "min_primal_eigenvalue": 1.7124914954794962e-09,
+      "min_dual_slack_eigenvalue": 4.657035009132132e-10,
+      "newton_steps": 97
+    },
+    {
+      "ensemble": "trine",
+      "n": 3,
+      "delta": 0.01,
+      "local_risk": 0.003421777777777779,
+      "lower": 0.0003356174294882625,
+      "upper": 0.0003356274294882683,
+      "gap": 1.0000000005795304e-08,
+      "completeness_residual": 6.004494726335835e-15,
+      "min_primal_eigenvalue": 1.2875669974654613e-09,
+      "min_dual_slack_eigenvalue": 4.685999631277461e-10,
+      "newton_steps": 90
+    },
+    {
+      "ensemble": "trine",
+      "n": 4,
+      "delta": 0.1,
+      "local_risk": 0.018548148148148154,
+      "lower": 0.016199993125015716,
+      "upper": 0.016200003124993992,
+      "gap": 9.999978275998522e-09,
+      "completeness_residual": 7.0826877696052314e-15,
+      "min_primal_eigenvalue": 9.524511305373748e-10,
+      "min_dual_slack_eigenvalue": 2.2773868249334322e-10,
+      "newton_steps": 79
+    },
+    {
+      "ensemble": "trine",
+      "n": 4,
+      "delta": 0.01,
+      "local_risk": 0.00019852148148148167,
+      "lower": 0.00019601312501501034,
+      "upper": 0.00019602312499332914,
+      "gap": 9.999978318797403e-09,
+      "completeness_residual": 9.003999709770926e-15,
+      "min_primal_eigenvalue": 6.506361900347841e-10,
+      "min_dual_slack_eigenvalue": 2.4865106581773695e-10,
+      "newton_steps": 76
+    },
+    {
+      "ensemble": "asymmetric",
+      "n": 1,
+      "delta": 0.1,
+      "local_risk": 0.06571428571428571,
+      "lower": 0.06356136902383669,
+      "upper": 0.06356137902383056,
+      "gap": 9.999993874632018e-09,
+      "completeness_residual": 3.3537189618722464e-16,
+      "min_primal_eigenvalue": 3.81878584310158e-09,
+      "min_dual_slack_eigenvalue": 2.0894701940887828e-09,
+      "newton_steps": 90
+    },
+    {
+      "ensemble": "asymmetric",
+      "n": 1,
+      "delta": 0.01,
+      "local_risk": 0.0065714285714285605,
+      "lower": 0.006556650308495578,
+      "upper": 0.006556660308489435,
+      "gap": 9.999993857284784e-09,
+      "completeness_residual": 4.002966042486721e-16,
+      "min_primal_eigenvalue": 3.3776230978777022e-09,
+      "min_dual_slack_eigenvalue": 2.319074085543882e-09,
+      "newton_steps": 90
+    },
+    {
+      "ensemble": "asymmetric",
+      "n": 2,
+      "delta": 0.1,
+      "local_risk": 0.04787755102040817,
+      "lower": 0.04046469166493493,
+      "upper": 0.04046470166493441,
+      "gap": 9.999999481258293e-09,
+      "completeness_residual": 8.989550626504553e-16,
+      "min_primal_eigenvalue": 2.05411785220193e-09,
+      "min_dual_slack_eigenvalue": 8.333333539716703e-10,
+      "newton_steps": 90
+    },
+    {
+      "ensemble": "asymmetric",
+      "n": 2,
+      "delta": 0.01,
+      "local_risk": 0.004678775510204088,
+      "lower": 0.004162338642767725,
+      "upper": 0.004162348642767193,
+      "gap": 9.999999468247867e-09,
+      "completeness_residual": 2.3114329448903835e-15,
+      "min_primal_eigenvalue": 1.6996687124484468e-09,
+      "min_dual_slack_eigenvalue": 8.333340637208172e-10,
+      "newton_steps": 90
+    },
+    {
+      "ensemble": "asymmetric",
+      "n": 3,
+      "delta": 0.1,
+      "local_risk": 0.02954804016844833,
+      "lower": 0.01735503749699431,
+      "upper": 0.0173550474969943,
+      "gap": 9.999999987797548e-09,
+      "completeness_residual": 3.5151405118898868e-15,
+      "min_primal_eigenvalue": 1.1421559039188042e-09,
+      "min_dual_slack_eigenvalue": 4.4589411195947616e-10,
+      "newton_steps": 89
+    },
+    {
+      "ensemble": "asymmetric",
+      "n": 3,
+      "delta": 0.01,
+      "local_risk": 0.0020631806932296733,
+      "lower": 0.00030651303311471736,
+      "upper": 0.0003065230327838058,
+      "gap": 9.999669088427143e-09,
+      "completeness_residual": 4.188188932821658e-15,
+      "min_primal_eigenvalue": 8.584957232441269e-10,
+      "min_dual_slack_eigenvalue": 4.50198663372583e-10,
+      "newton_steps": 165
+    },
+    {
+      "ensemble": "asymmetric",
+      "n": 4,
+      "delta": 0.1,
+      "local_risk": 0.01645427460780231,
+      "lower": 0.011377810243436957,
+      "upper": 0.011377820243415288,
+      "gap": 9.999978331509674e-09,
+      "completeness_residual": 9.184719066239555e-15,
+      "min_primal_eigenvalue": 6.350523557912589e-10,
+      "min_dual_slack_eigenvalue": 2.0833292670392185e-10,
+      "newton_steps": 77
+    },
+    {
+      "ensemble": "asymmetric",
+      "n": 4,
+      "delta": 0.01,
+      "local_risk": 0.00017500775982229604,
+      "lower": 0.00012962604855939916,
+      "upper": 0.00012963604853780266,
+      "gap": 9.999978403500698e-09,
+      "completeness_residual": 7.943440658728588e-15,
+      "min_primal_eigenvalue": 4.3375789169824633e-10,
+      "min_dual_slack_eigenvalue": 2.0833777073326477e-10,
+      "newton_steps": 80
+    }
+  ],
+  "scope": "Finite exact algebra and floating-point matrix checks only; universal claims are analytical.",
+  "passed": true
+}
