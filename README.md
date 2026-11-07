@@ -2,10 +2,10 @@
 
 **How many imperfect preparations are needed to rule out a quantum state with certainty, and how does weak noise change the error rate?**
 
-A source chooses one of three known pure qubit states and repeats that preparation. The receiver must name a state that was **not** chosen. For three distinct states whose Bloch triangle strictly contains the origin, separate measurements and a count decoder attain a sharp corruption threshold that no collective measurement can improve.
+A source chooses one of three known pure qubit states and repeats that preparation. The receiver must name a state that was **not** chosen. For three distinct states whose Bloch triangle strictly contains the origin, separate measurements and a count decoder attain a sharp corruption threshold that no collective measurement can improve. Perfect exclusion of up to $`t`$ corruptions is possible if and only if
 
 ```math
-\boxed{\text{Perfect exclusion of up to }t\text{ corruptions is possible}\iff n\geq3t+1.}
+\boxed{n\geq3t+1.}
 ```
 
 The converse covers every joint POVM. It already holds against unknown-location product replacements; the attaining protocol also tolerates arbitrary states in the coherent span of the corresponding error patterns.
@@ -40,12 +40,19 @@ The limit at a fixed nonzero $`\delta`$ is not established. This is a sharp low-
 | What is inherited, and what does this add? | [Related work](references/RELATED_WORK.md) |
 | What has been checked computationally? | [Verification guide](verification/README.md) |
 
-[The compact reading map](llms.txt) routes theorem, conceptual, and reproduction questions. The single educational anchor and its 30-milestone learning route have not yet been selected.
+[The continuous science route](science/README.md) connects these proofs. [The compact reading map](llms.txt) routes theorem, conceptual, and reproduction questions.
+
+## Learn the mechanism
+
+The [learning introduction](learning/README.md) starts with a complete four-copy trine experiment. The single educational anchor is **John Watrous, *The Theory of Quantum Information* (2018)**, using the author's standard-layout manuscript. The [source-to-project bridge](learning/WATROUS_BRIDGE.md) gives selected passages, translates notation, and supplies the polynomial and asymptotic steps locally.
+
+Follow the [30-milestone map](learning/MILESTONES.md): 12 background/preliminaries milestones join the model's ingredients, and 18 narrative/innovation milestones develop the two theorems and their meaning. The specialist proof route remains directly accessible above.
 
 ## Reproduce the finite checks
 
 ```bash
 python -m pip install -r verification/requirements.txt
+python verification/check_repository.py
 OPENBLAS_NUM_THREADS=1 python verification/verify.py --output /tmp/exclusion-check.json
 ```
 
