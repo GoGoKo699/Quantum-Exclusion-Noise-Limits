@@ -2,7 +2,7 @@
 
 Scientific question: how robust is exclusion of one of three known pure-qubit preparations, repeated under an unknown fixed label?
 
-Start with README.md, then science/model.md. The ensemble is a fixed strict great-circle triple, and raw repetitions—not encoded codewords—are supplied. All joint POVMs are allowed in the converse.
+Start with README.md, science/README.md, then science/model.md. The ensemble is a fixed strict great-circle triple, and raw repetitions—not encoded codewords—are supplied. All joint POVMs are allowed in the converse.
 
 Theorem route:
 - science/adversarial.md: n >= 3t+1 is necessary and sufficient; local count decoder; coherent error-subspace adversary; symmetric-sector polynomial completeness obstruction.
@@ -12,4 +12,4 @@ Theorem route:
 Attribution: references/RELATED_WORK.md and references/references.bib.
 Reproduction: verification/README.md, verification/verify.py, verification/requirements.txt, verification/reference_results.json.
 
-Do not replace the two asymptotic rates by an asserted fixed-noise limit. Do not call the local decoder exactly optimal at fixed noise. The constants depend on fixed geometry. No arbitrary-noise fault-tolerance or coding-capacity theorem is claimed. The educational anchor and 30-milestone route are pending selection.
+Do not replace the two asymptotic rates by an asserted fixed-noise limit. Do not call the local decoder exactly optimal at fixed noise. The constants depend on fixed geometry. No arbitrary-noise fault-tolerance or coding-capacity theorem is claimed. Learning route: learning/README.md gives a complete four-copy trine example. learning/MILESTONES.md has exactly M01--M30 (12 background, 18 narrative). learning/WATROUS_BRIDGE.md connects the selected single anchor, John Watrous, The Theory of Quantum Information (2018), author standard-layout manuscript, to the project. Textbook foundations, locally supplied polynomial derivations, and research attribution are distinct. Personal learner records and coaching instructions do not belong here.

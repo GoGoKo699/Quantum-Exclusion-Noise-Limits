@@ -1,6 +1,6 @@
 # Reproduce the finite checks
 
-The universal threshold and asymptotic laws are established by the [analytical proofs](../science/proof-obligations.md). This suite checks their algebraic representation, physical local measurement, and small unrestricted decision problems by separate constructions.
+The universal threshold and asymptotic laws are established by the [analytical proofs](../science/README.md). This suite checks their algebraic representation, physical local measurement, and small unrestricted decision problems by separate constructions.
 
 ## Run
 
@@ -33,4 +33,8 @@ The final gap must be less than $`2\times10^{-7}`$, completeness residual below 
 
 ## Limits
 
-No finite run proves an all-$`n`$ theorem, an order of limits, literature priority, or hardware robustness. The geometric constant in the converse is deliberately conservative; the suite does not optimize it. No fixed-noise quantum exponent is extrapolated from these data. Source and numerical checks do not establish that every equation renders correctly on GitHub; hosted presentation review belongs to the subsequent furnishing stage.
+No finite run proves an all-$`n`$ theorem, an order of limits, literature priority, or hardware robustness. The geometric constant in the converse is deliberately conservative; the suite does not optimize it. No fixed-noise quantum exponent is extrapolated from these data. Source and numerical checks do not establish that every equation renders correctly on GitHub.
+
+## Learning, navigation, and actual-host review
+
+Run `python verification/check_repository.py` to check the thirty milestone records, backward-only dependency order, source links and text integrity. This verifies structure, not teaching effectiveness. The [hosted verification guide](references/hosted-rendering.md) documents commit-pinned GitHub captures at narrow and wide widths. The read-only CI workflow runs the scientific and repository checks and captures actual hosted MathML and screenshots. A source-only pass cannot replace that hosted comparison or visual inspection; each report identifies its checked revision.

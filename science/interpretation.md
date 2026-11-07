@@ -28,7 +28,7 @@ The general log-Euclidean upper bound evaluates to
 
 ```math
 C_{\mathrm{LE}}=-\log\min_{s_i\geq0,\,\sum_i s_i=1}
-\operatorname{Tr}\exp\!\left(\sum_i s_i\log\rho_i\right)
+\mathrm{Tr}\exp\!\left(\sum_i s_i\log\rho_i\right)
 =-\log\bigl[2\sqrt{\delta(1-\delta)}\bigr].
 ```
 

@@ -1,0 +1,59 @@
+name: Scientific and hosted verification
+
+on:
+  push:
+    branches: [main, merlin/watrous-furnishing]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned scientific dependencies
+        run: python -m pip install -r verification/requirements.txt
+      - name: Check learning map and navigation
+        run: python verification/check_repository.py --output "$RUNNER_TEMP/evidence/repository.json"
+      - name: Run finite scientific checks
+        run: python verification/verify.py --output "$RUNNER_TEMP/evidence/science.json"
+      - name: Install isolated browser dependencies
+        run: |
+          npm install --prefix "$RUNNER_TEMP/browser-deps" playwright@1.56.1 mathjax-full@3.2.1
+          "$RUNNER_TEMP/browser-deps/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Capture actual pinned GitHub mathematics
+        env:
+          NODE_PATH: ${{ runner.temp }}/browser-deps/node_modules
+        run: |
+          python verification/hosted/build_contract.py --root "$GITHUB_WORKSPACE" --repository "$GITHUB_REPOSITORY" --revision "$(git rev-parse HEAD)" --output "$RUNNER_TEMP/evidence/contract.json"
+          node verification/hosted/capture_hosted_math.cjs --root "$GITHUB_WORKSPACE" --repository "$GITHUB_REPOSITORY" --revision "$(git rev-parse HEAD)" --contract "$RUNNER_TEMP/evidence/contract.json" --output "$RUNNER_TEMP/evidence/hosted"
+      - name: Export inspected source and revision
+        if: always()
+        run: |
+          mkdir -p "$RUNNER_TEMP/evidence"
+          git rev-parse HEAD > "$RUNNER_TEMP/evidence/commit.txt"
+          git rev-parse HEAD^{tree} > "$RUNNER_TEMP/evidence/tree.txt"
+          git archive --format=zip --output="$RUNNER_TEMP/evidence/source.zip" HEAD
+      - name: Upload verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verification-${{ github.sha }}
+          path: ${{ runner.temp }}/evidence/
+          retention-days: 14
+          if-no-files-found: error

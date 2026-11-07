@@ -23,7 +23,7 @@ K=(1+\sqrt5)L,\qquad B=(K/c_{\min})^2.
 These are finite constants for each fixed strict triple. We claim
 
 ```math
-|\mathcal L_n(A)|\leq K^n\|A\|_1. \tag{N1}
+|\mathcal L_n(A)|\leq K^n\|A\|_1. \qquad\text{(N1)}
 ```
 
 To prove this, write a degree-$`n`$ monomial as $`a^r d^u b^v c^w`$. Substitute $`a=(h+s)/2`$, $`d=(h-s)/2`$ and reduce $`s^2=\Delta=h^2-4bc`$. Since $`\|\Delta\|_{\mathrm{coef},1}\leq5L^2`$, the coefficient one-norm of its $`A`$-component is at most $`\gamma^n`$, where $`\gamma=(1+\sqrt5)L/2`$. This follows by summing the even-$`s`$ terms in the binomial expansion and bounding their absolute coefficients; the omitted odd terms can only increase that upper bound.
@@ -40,13 +40,13 @@ Thus the coefficient bound is $`(2\gamma)^n=K^n`$. A singular-value decompositio
 
 ## Quantitative leakage for every POVM
 
-Compress an arbitrary POVM to $`A_i=\Pi_nM_i\Pi_n`$. In the symmetric Dicke basis relative to $`(\psi_i,\phi_i)`$, let $`P_i`$ project onto counts $`0,\ldots,k`$, and $`Q_i=I-P_i`$. Put $`\varepsilon_i=\operatorname{Tr}(P_iA_i)`$.
+Compress an arbitrary POVM to $`A_i=\Pi_nM_i\Pi_n`$. In the symmetric Dicke basis relative to $`(\psi_i,\phi_i)`$, let $`P_i`$ project onto counts $`0,\ldots,k`$, and $`Q_i=I-P_i`$. Put $`\varepsilon_i=\mathrm{Tr}(P_iA_i)`$.
 
 The symbol of $`Q_iA_iQ_i`$ is divisible by $`q_i^{k+1}`$, so
 $`\mathcal L_n(Q_iA_iQ_i)=0`$. For any positive operator $`A`$ and projector $`Q=I-P`$,
 
 ```math
-\|A-QAQ\|_1\leq2\sqrt{\operatorname{Tr}(A)\operatorname{Tr}(PA)}.
+\|A-QAQ\|_1\leq2\sqrt{\mathrm{Tr}(A)\mathrm{Tr}(PA)}.
 ```
 
 For completeness, decompose $`A-QAQ=PA+QAP`$, insert $`\sqrt A\sqrt A`$, and use the Schatten Cauchy--Schwarz inequality on both terms. Since $`0\preceq A_i\preceq I_{\mathrm{sym}}`$, its trace is at most $`n+1`$. Applying (N1), then ordinary Cauchy--Schwarz over the three labels, gives
@@ -60,7 +60,7 @@ c_{\min}^n
 Consequently every POVM has
 
 ```math
-\sum_i\varepsilon_i\geq\frac1{12(n+1)B^n}. \tag{N2}
+\sum_i\varepsilon_i\geq\frac1{12(n+1)B^n}. \qquad\text{(N2)}
 ```
 
 This step permits measurements that depend on $`\delta`$ and includes all nonsymmetric sectors through the original unrestricted POVM. Compression only extracts a necessary positive contribution to its risk.
@@ -71,7 +71,7 @@ In the $`i`$-adapted Dicke basis, $`\rho_i(\delta)^{\otimes n}`$ has eigenvalue 
 
 ```math
 P_n^*(\delta)\geq
-\frac{\pi_{\min}\delta^k(1-\delta)^{n-k}}{12(n+1)B^n}. \tag{N3}
+\frac{\pi_{\min}\delta^k(1-\delta)^{n-k}}{12(n+1)B^n}. \qquad\text{(N3)}
 ```
 
 The explicit $`\pi_{\min}`$ is necessary when the objective is prior-weighted average error. The inequality holds for every $`n\geq1`$ and $`0<\delta<1/2`$.
@@ -79,9 +79,11 @@ The explicit $`\pi_{\min}`$ is necessary when the objective is prior-weighted av
 For the attaining local construction, each measurement reports the true label $`i`$ with probability $`c_i\delta`$. Independent preparation noise makes that label's count binomial. Outputting the maximum-count label can be wrong only when $`N_i\geq k`$. Hence
 
 ```math
-P_n^*(\delta)\leq P_n^{\mathrm{count}}(\delta)
-\leq\sum_i\pi_i\Pr\{\mathrm{Bin}(n,c_i\delta)\geq k\}
-\leq2^n\delta^k. \tag{N4}
+\begin{aligned}
+P_n^*(\delta)&\leq P_n^{\mathrm{count}}(\delta)\\
+&\leq\sum_i\pi_i\Pr\{\mathrm{Bin}(n,c_i\delta)\geq k\}\\
+&\leq2^n\delta^k.\qquad\text{(N4)}
+\end{aligned}
 ```
 
 Always outputting a least-probable label also gives $`P_n^*\leq\pi_{\min}`$. Equations (N3)--(N4) establish the exact fixed-$`n`$ small-noise power $`k`$.
@@ -97,16 +99,19 @@ Put $`c_{\max}=\max_i c_i`$. When $`c_{\max}\delta<1/3`$, the elementary binomia
 where $`D_{\mathrm{bin}}(p\Vert q)=p\log(p/q)+(1-p)\log((1-p)/(1-q))`$. Applying (N3) and using $`k/n\to1/3`$ yields the full comparison
 
 ```math
+\begin{aligned}
 D_{\mathrm{bin}}(1/3\Vert c_{\max}\delta)
-\leq\underline E(\delta)\leq\overline E(\delta)
-\leq\log B+\frac13\log\frac1\delta+\frac23\log\frac1{1-\delta}. \tag{N5}
+&\leq\underline E(\delta)\leq\overline E(\delta),\\
+\overline E(\delta)&\leq\log B+\frac13\log\frac1\delta
+ +\frac23\log\frac1{1-\delta}.\qquad\text{(N5)}
+\end{aligned}
 ```
 
 Both ends have leading term $`\frac13\log(1/\delta)`$ as $`\delta\downarrow0`$. This proves Theorem B without assuming a fixed-noise limit. The additive constants can depend on the fixed geometry, not on $`n`$ or $`\delta`$ in a sufficiently small-noise interval. Priors remain fixed and positive.
 
 ## Trine example
 
-For $`z_j=e^{2\pi\mathrm{i}j/3}`$, $`c_i=2/3`$. With equal priors the local measurement has conditional probabilities $`a=2\delta/3`$ for the true label and $`b=(1-a)/2`$ for either other label. Its optimal classical postprocessing is exactly the maximum-count rule, because $`a<b`$.
+For $`z_j=e^{2\pi\mathrm{i}j/3}`$, $`c_i=2/3`$. With equal priors the local measurement has conditional probabilities $`a=2\delta/3`$ for the true label and $`b=(1-a)/2`$ for either other label. Its optimal classical postprocessing is exactly the maximum-count rule, because $`a\lt b`$.
 
 Its classical exclusion exponent is
 
