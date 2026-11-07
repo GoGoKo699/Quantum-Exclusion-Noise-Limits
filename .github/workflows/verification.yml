@@ -1,4 +1,4 @@
-name: Scientific verification
+name: Scientific and hosted verification
 
 on:
   push:
@@ -12,7 +12,7 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     env:
       OPENBLAS_NUM_THREADS: '1'
       OMP_NUM_THREADS: '1'
@@ -23,10 +23,22 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - name: Install pinned scientific dependencies
         run: python -m pip install -r verification/requirements.txt
       - name: Run finite scientific checks
         run: python verification/verify.py --output "$RUNNER_TEMP/evidence/science.json"
+      - name: Install isolated browser dependencies
+        run: |
+          npm install --prefix "$RUNNER_TEMP/browser-deps" playwright@1.56.1 mathjax-full@3.2.1
+          "$RUNNER_TEMP/browser-deps/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Capture actual pinned GitHub mathematics
+        env:
+          NODE_PATH: ${{ runner.temp }}/browser-deps/node_modules
+        run: |
+          node verification/hosted/capture_hosted_math.cjs --root "$GITHUB_WORKSPACE" --repository "$GITHUB_REPOSITORY" --revision "$(git rev-parse HEAD)" --output "$RUNNER_TEMP/evidence/hosted"
       - name: Export inspected source and revision
         if: always()
         run: |
